@@ -1,0 +1,39 @@
+<div id="dlg1">
+    <p>Change cell data</p>
+          <p><%= data  %></p>
+    <table>
+      <tr>
+        <th>title</th>
+        <td><input type="text" id="updTitle"></td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td><input type="text" id="updContent"></td>
+      </tr>
+    </table>
+  </div>
+
+  <script type="text/javascript">
+    jQuery(function($){
+      $("#dlg1").dialog({
+        modal: true,
+        show: "slide",
+        hide: "explode",
+        resizable: false,
+        closeOnEscape: true,
+        draggable: false,
+        buttons: {
+          "Save": function(){
+            displayMessage("Saved! (title: "
+              + $("#updTitle").val()
+              + $("#updContent").val()
+              + ") ");
+            $(this).dialog("close");
+          },
+          "Cancel": function(){
+            $(this).dialog("close");
+          }
+        }
+      });
+    });
+    </script>

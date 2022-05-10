@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "name": "Launch via npm",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "debug"
+            ],
+            "cwd": "${workspaceFolder}",
+//            "port": 9229,
+            "sourceMaps": true
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "name": "Launch Firefox againt localhost",
+            "url": "http://localhost:3001",
+            "webRoot": "${workspaceFolder}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full-stack",
+            "configurations": ["Launch via npm", "Launch Firefox againt localhost"]
+        }
+    ]
+}
